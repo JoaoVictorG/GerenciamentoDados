@@ -5,7 +5,7 @@ Drop TABLE [Cliente]
 
 /*    CREATE TABLE CLIENTE    */
 CREATE TABLE [Cliente] (
-    [ClienteId] INT NOT NULL,
+    [ClienteId] INT IDENTITY(1,1) NOT NULL,
     [Cliente] NVARCHAR(160) NOT NULL,
     [TipoCliente] NVARCHAR(160) NOT NULL,
     [NomeContato] NVARCHAR(160) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE [Cliente] (
 
     PRIMARY KEY([ClienteId])
 )
-
+/*    CREATE TABLE IMOVEL    */
 CREATE TABLE [Imovel](
     [ImovelId] INT NOT NULL,
     [ClienteId] INT NOT NULL,
@@ -30,3 +30,4 @@ CREATE TABLE [Imovel](
     CONSTRAINT [FK_Cliente_Imovel] FOREIGN KEY([ClienteId])
         REFERENCES [Cliente](ClienteId)
 )
+ 
